@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Deezer test app</string>
+    <string name="btnLoadAlbums">load albums</string>
+    <string name="unknown_error">Erreur inconnue.</string>
+    <string name="cant_load_this_page">Impossible de charger cette page.</string>
+    <string name="no_network_available">Vous n\'êtes pas connecté à internet.</string>
+    <string name="operation_in_progress">Chargement en cours&#8230;</string>
+    <string name="albums_not_found">Aucun album disponible.</string>
+    <string name="network_error">Impossible de télécharger les albums.</string>
+    <string name="music">Musique</string>
+    <string name="try_again">réessayer</string>
+    <string name="shuffle_playback">lecture aléatoire</string>
+    <string name="todo_recycler_view_for_track_list">TODO Recycler view for track List \n Scroll to see app bar animation</string>
+    <string name="todo">// TODO</string>
+</resources>
