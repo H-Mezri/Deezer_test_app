@@ -60,7 +60,7 @@ class AlbumRecyclerAdapter(
             albumItemBinding.album = album
 
             // load album cover
-            itemView.imgAlbumCover.load(album.cover_big) {}
+            itemView.imgAlbumCover.load(album.cover) {}
 
             // init image view transition name
             ViewCompat.setTransitionName(itemView.imgAlbumCover, album.id.toString())

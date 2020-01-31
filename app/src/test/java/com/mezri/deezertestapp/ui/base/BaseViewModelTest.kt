@@ -10,33 +10,14 @@ abstract class BaseViewModelTest {
     val artist = Artist(
         1,
         "mezri",
-        "picture",
-        "picture_small",
-        "picture_medium",
-        "picture_big",
-        "picture_xl",
-        "tracks",
-        "type"
+        "picture"
     )
     val albumsList = listOf(
         Album(
             1,
             "title",
-            "link",
             "cover",
-            "cover_small",
-            "cover_medium",
-            "cover_big",
-            "cover_xl",
-            12,
-            "102938",
-            "record",
-            true,
-            "tracks",
-            true,
-            123,
-            artist,
-            "type"
+            artist
         )
     )
 

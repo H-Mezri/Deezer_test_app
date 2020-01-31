@@ -4,7 +4,6 @@ import com.mezri.deezertestapp.utils.CACHE_MAX_AGE
 import com.mezri.deezertestapp.utils.CACHE_SIZE
 import okhttp3.Cache
 import okhttp3.OkHttpClient
-import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.converter.moshi.MoshiConverterFactory
 import java.io.File
 
@@ -28,7 +27,6 @@ object HttpClient {
 
     /**
      * Initialize OkHttp client and return it
-     *
      */
     fun getHttpClient(): OkHttpClient {
         if (client == null) {

@@ -1,12 +1,11 @@
 package com.mezri.deezertestapp.data.repository
 
 import com.mezri.deezertestapp.data.model.Album
-import com.mezri.deezertestapp.data.model.RequestData
-import io.reactivex.Observable
+import io.reactivex.Single
 
 interface Repository {
     /**
      * get albums from remote server
      */
-    fun getAlbums(index: Int) : Observable<RequestData<Album>>
+    fun getAlbums(index: Int): Single<List<Album>>
 }

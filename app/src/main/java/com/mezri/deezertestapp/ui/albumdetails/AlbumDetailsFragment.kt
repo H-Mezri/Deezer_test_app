@@ -79,7 +79,7 @@ class AlbumDetailsFragment : BaseFragment(), View.OnClickListener {
 
         // load album cover
         imgAlbumCover.load(
-            fragmentViewModel.album.cover_big,
+            fragmentViewModel.album.cover,
             true
         ) { startPostponedEnterTransition() }
 

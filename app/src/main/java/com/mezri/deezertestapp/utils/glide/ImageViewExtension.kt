@@ -2,7 +2,6 @@ package com.mezri.deezertestapp.utils.glide
 
 import android.graphics.drawable.Drawable
 import android.widget.ImageView
-import com.bumptech.glide.GenericTransitionOptions
 import com.bumptech.glide.load.DataSource
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.load.engine.GlideException

@@ -2,11 +2,10 @@ package com.mezri.deezertestapp.ui.main
 
 import android.os.Build
 import com.mezri.deezertestapp.data.errors.AppMessages
-import com.mezri.deezertestapp.data.model.RequestData
 import com.mezri.deezertestapp.data.repository.Repository
 import com.mezri.deezertestapp.ui.base.BaseViewModelTest
 import com.mezri.deezertestapp.utils.schedulers.TrampolineSchedulerProvider
-import io.reactivex.Observable
+import io.reactivex.Single
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.Mock
@@ -35,14 +34,7 @@ class MainFragmentViewModelTest : BaseViewModelTest() {
     fun testGetAlbums_OK() {
         // given
         `when`(repository.getAlbums(0)).thenReturn(
-            Observable.just(
-                RequestData(
-                    albumsList,
-                    "",
-                    0,
-                    ""
-                )
-            )
+            Single.just(albumsList)
         )
         assert(mainFragmentViewModel.albumsListCache.isEmpty())
 
@@ -57,7 +49,7 @@ class MainFragmentViewModelTest : BaseViewModelTest() {
     fun testGetAlbums_KO_NETWORK_ERROR() {
         // given
         val throwable = Throwable()
-        `when`(repository.getAlbums(0)).thenReturn(Observable.error(throwable))
+        `when`(repository.getAlbums(0)).thenReturn(Single.error(throwable))
         assert(mainFragmentViewModel.albumsListCache.isEmpty())
 
         // when
@@ -76,14 +68,7 @@ class MainFragmentViewModelTest : BaseViewModelTest() {
     fun testGetAlbums_KO_ALBUMS_NOT_FOUND() {
         // given
         `when`(repository.getAlbums(0)).thenReturn(
-            Observable.just(
-                RequestData(
-                    listOf(),
-                    "",
-                    0,
-                    ""
-                )
-            )
+            Single.just(listOf())
         )
         assert(mainFragmentViewModel.albumsListCache.isEmpty())
 

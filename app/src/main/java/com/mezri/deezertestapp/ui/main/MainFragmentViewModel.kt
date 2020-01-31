@@ -60,10 +60,10 @@ class MainFragmentViewModel : BaseViewModel() {
                 .subscribeOn(schedulerProvider.io())
                 .subscribe({ albums ->
                     when {
-                        albums.data.isNotEmpty() -> {
+                        albums.isNotEmpty() -> {
                             // add request result to albums list
-                            albumsList.value = albums.data
-                            albumsListCache.addAll(albums.data)
+                            albumsList.value = albums
+                            albumsListCache.addAll(albums)
                             isFirstRequestLoadingAlbums.value = false
                         }
                         albumsListCache.size == 0 -> {
@@ -81,7 +81,7 @@ class MainFragmentViewModel : BaseViewModel() {
                     isLoadingAlbums = false
                     // Inform Espresso that app is ready
                     EspressoIdlingResource.decrement()
-                }, {
+                }, { throwable ->
                     if (albumsListCache.isEmpty()) {
                         // notify request received
                         isNoAlbumLoaded.value = true
@@ -91,7 +91,7 @@ class MainFragmentViewModel : BaseViewModel() {
                     albumsList.value = emptyList()
                     isLoadingAlbums = false
                     // handle error
-                    handleAppMessage(AppMessages.NETWORK_ERROR.getAppError(it))
+                    handleAppMessage(AppMessages.NETWORK_ERROR.getAppError(throwable))
                     // Inform Espresso that app is ready
                     EspressoIdlingResource.decrement()
                 })

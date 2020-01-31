@@ -5,7 +5,7 @@ import com.mezri.deezertestapp.ui.base.BaseViewModel
 
 class AlbumDetailsFragmentViewModel : BaseViewModel() {
 
-    // Album
+    // album
     lateinit var album: Album
 
     fun initAlbum(album: Album) {
